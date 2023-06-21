@@ -1,0 +1,19 @@
+@import "scroll.css";
+@import "registration.css";
+@import "test.css";
+
+#background{
+    background-size:cover;
+}
+
+.img{overflow: hidden;}
+
+.img img{
+    transition: all 0.4s ease;
+}
+
+.img:hover img{
+    transform: scale(1.09);
+}
+
+    

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listing</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/logo.png')}}">
+
+</head>
+<body background="{{ url_for('static', filename='img/bg2.jpg') }}" class="d-flex flex-column min-vh-100" >
+    {% extends "basekeeper.html" %}
+    {% block content %}
+    {{msg}}
+    <div class="container">
+
+    <h1 class="text-center mt-4" style="font-family: 'Permanent Marker', cursive; font-size: 50px;  color:blueviolet;">Jobs Listing</h1>
+<hr>
+<div class="row text-center">
+{% for row in rows %}
+<div class="col-md-4 pt-5">
+<div class="card mx-auto border border-2 border-info p-2"
+style="width: 18rem;">
+<div class="card-body bg-dark">
+<h5 class="card-title text-info">{{row.1}}</h5>
+<p class="card-text text-white"><b>Job Detail:</b> {{row.3}} </p>
+<p class="card-text text-white"><b>Salary:</b> Rs.{{row.5}} </p>
+<a href="{{ url_for('views.applyjob') }}" class="btn btn-primary">Apply Job</a>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>   
+
+{% endblock %}
+</body>
+</html>

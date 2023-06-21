@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Housekeeper Registration</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/logo.png')}}">
+
+  </head>
+
+  <body background="{{ url_for('static', filename='img/bg2.jpg') }}" class="d-flex flex-column min-vh-100" >
+    {% extends "basekeeper.html" %}
+  {% block content %}
+  <section class="vh-50 gradient-custom">
+    <div class="container py-5 h-50">
+      <div class="row justify-content-center align-items-center h-50">
+        <div class="col-6 col-sm-6 col-sm-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5"> Housekeeper Registration Form</h3>
+              <form method="post" action="{{ url_for('auth.register_hk') }}">
+  
+                <div class="row">
+                  <div class="col-md-12 mb-3">
+
+                    <div class="col-md-5 mb-4">
+  
+                      <h6 class="mb-2 pb-1">Title </h6>
+    
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="txttitle" id="txttitle"
+                          value="Mr" checked />
+                        <label class="form-check-label" for="txttitle">Mr</label>
+                      </div>
+    
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="txttitle" id="txttitle"
+                          value="Mrs" />
+                        <label class="form-check-label" for="txttitle">Mrs</label>
+                      </div>
+    
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="txttitle" id="txttitle"
+                          value="Miss" />
+                        <label class="form-check-label" for="txttitle">Miss</label>
+                      </div>
+    
+                    </div>
+  
+                    <div class="form-outline">
+                      <label class="form-label" for="txtfn">First Name</label>
+                      <input type="text" id="txtfn" class="form-control form-control-lg" name="txtfn"/>
+                    </div>
+
+                    <div class="form-outline">
+                      <label class="form-label" for="txtln">Last Name</label>
+                      <input type="text" id="txtln" class="form-control form-control-lg" name="txtln"/>
+                    </div>
+
+                    <div class="form-outline">
+                      <label class="form-label" for="txtemail">Email</label>
+                      <input type="email" id="txtemail" class="form-control form-control-lg" name="txtemail"/>
+                    </div>
+
+                    <div class="form-outline">
+                      <label class="form-label" for="txtpwd">Password</label>
+                      <input type="password" id="txtpwd" class="form-control form-control-lg" name="txtpwd" />
+                    </div>
+
+                    <div class="form-outline">
+                      <label class="form-label" for="txtcpwd">Confirm Password</label>
+                      <input type="password" id="txtcpwd" class="form-control form-control-lg" name="txtcpwd"/>
+                    </div>
+
+                    <div class="form-outline">
+                      <label class="form-label" for="txtpadd">Postal Address</label>
+                      <input type="text" id="txtpadd" class="form-control form-control-lg" name="txtpadd"/>
+                    </div>
+
+                    <div class="form-outline">
+                      <label class="form-label" for="txtcontact">Contact Number</label>
+                      <input type="text" id="txtcontact" class="form-control form-control-lg" name="txtcontact"/>
+                    </div>
+
+                    <div class="form-outline datepicker w-100">
+                      <label for="txtdob" class="form-label">Date of Birth</label>
+                      <input type="date" class="form-control form-control-lg" id="txtdob" name="txtdob"/>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-6 mb-3">
+                        <label class="form-label select-label" for="txthqa">Highest Qualification Archieved</label>
+
+      
+                        <select class="select form-control-lg" id="txthqa" name="txthqa">
+                          <option value="3" disabled>Choose Option</option>
+                          <option value="1">SC</option>
+                          <option value="2">HSC</option>
+                          <option value="3">Tertiary</option>
+                        </select>
+      
+                      </div>
+                    </div>
+
+
+
+                    <div class="form-outline mb-4">
+                      <label class="form-label text-black fw-bold" for="txtfilecv">Upload your CV</label>
+                      <input type="file" class="form-control" id="txtfilecv" name="txtfilecv">
+                  </div>
+
+
+                    <div class="form-outline datepicker w-100">
+                      <label for="txtskills" class="form-label">Skills</label>
+                      <input type="text" class="form-control form-control-lg" id="txtskills" name="txtskills"/>
+                    </div>
+  
+                  </div>
+                 
+
+                  
+                </div>
+  
+                <div class="mt-4 pt-2">
+                  <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   
+
+
+      {% endblock %}
+   
+  </body>
+</html>

@@ -1,0 +1,25 @@
+.header{
+    height: 200px;
+    width: 100%;
+    background: linear-gradient(180deg, #CED4DB 0%, #eeb4e3 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.header h1{
+    font-size: 40px;
+    font-weight: 700;
+    color: #006;
+    margin-top: 50px;
+}
+.header h6{
+    color: #004
+}
+
+.h3 h3{
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(119, 18, 166);
+    margin-top: 50px;
+}

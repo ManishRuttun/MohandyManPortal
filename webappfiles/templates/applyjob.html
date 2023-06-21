@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apply Job</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/logo.png')}}">
+
+  </head>
+
+  <body background="{{ url_for('static', filename='img/bg2.jpg') }}" class="d-flex flex-column min-vh-100" >
+    {% extends "basekeeper.html" %}
+  {% block content %} {{msg}}
+
+  <form
+  class="row"
+  action="/submition"
+  method="post">  
+  <section class="vh-50 gradient-custom">
+    <div class="container py-5 h-50">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-4 pb-5">
+  
+                <h2 class="fw-bold mb-2 text-uppercase">Apply for Job</h2>
+                <p class="text-white-50 mb-5"></p>
+  
+                <div class="form-outline form-white mb-4">
+                  <input type="text" id="txtjtitle" class="form-control form-control-lg" name="txtjtitle"/>
+                  <label class="form-label" for="txtjtitle">Job Title</label>
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                    <input type="text" id="txtref" class="form-control form-control-lg" name="txtref"/>
+                    <label class="form-label" for="txtref">Job Reference</label>
+                  </div>
+  
+                <div class="form-outline form-white mb-4">
+                  <input type="date" id="txtdate" class="form-control form-control-lg" name="txtdate" />
+                  <label class="form-label" for="txtdate">Interview Date</label>
+                </div>
+  
+  
+                <button class="btn btn-outline-light btn-lg px-5" type="submit">Apply</button>
+  
+  
+              </div>
+  
+
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
+{% endblock %}
+  </body>
+</html>

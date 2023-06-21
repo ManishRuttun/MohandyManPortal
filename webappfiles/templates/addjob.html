@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Job</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/logo.png')}}">
+
+   
+    <style>
+
+      .title h3{
+        font-size: 40px;
+        font-weight: 700;
+        color: rgb(0, 104, 189);
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .title h5{
+        color: rgb(0, 186, 206);
+        text-align: center;
+        margin-bottom: 15px;
+      }
+    </style>
+  
+
+  
+   
+  </head>
+  <body background="{{ url_for('static', filename='img/bg2.jpg') }}" class="d-flex flex-column min-vh-100" >
+    {% extends "baseowner.html" %} {% block content %} {{msg}} {{title}}
+    
+<div class="container">
+<div class="title">
+  <h3>Need a housekeeper !!</h3>
+  <h5>Post a Job</h5>
+</div>
+<form
+class="row"
+action="/savedetails"
+method="post"
+enctype="multipart/form-data"
+>
+
+              <div class=" card-registration  bg-indigo p-5" style="border-radius: 10px; width:40%; margin:auto ;">
+                
+                   
+                        <h3 class="fw-normal sm-2" style="color: #f8f8f8;">Post Job</h3>
+      
+                        <div class="row text-black">
+                          
+
+                            <div class="col-">
+                                <div class="form-outline">
+                                  <input type="text" id="txtjtitle" name="txtjtitle" class="form-control" placeholder="Enter Job Title" />
+                                  <label class="form-label" for="txtjtitle"> Job Title</label>
+                                </div>
+                              </div>
+
+                          <div class="col-">
+                            <div class="form-outline">
+                              <input type="text" id="txtjref" name="txtjref" class="form-control" placeholder="Enter Job Reference" />
+                              <label class="form-label" for="txtjref">Job Reference</label>
+                            </div>
+                          </div>
+
+                          <div class="col-">
+                            <div class="form-outline">
+                              <input type="text" id="txtjdes" name="txtjdes" class="form-control" placeholder="Enter Job Description" />
+                              <label class="form-label" for="txtjdes">Job Description</label>
+                            </div>
+                          </div>
+
+                          <div class="col-">
+                            <div class="form-outline">
+                              <input type="text" id="txtsalary" name="txtsalary" class="form-control" placeholder="Enter Salary" />
+                              <label class="form-label" for="txtsalary">Salary</label>
+                            </div>
+                          </div>
+
+                          <div class="col-">
+                            <div class="form-outline">
+                              <input type="date" id="txtjclose" name="txtjclose" class="form-control" placeholder="Enter Closing Date" />
+                              <label class="form-label" for="txtjclose">Closing Date</label>
+                            </div>
+                          </div>
+
+                          <div class="col-">
+                            <button type="submit" class="btn btn-info btn-lg "
+                            data-mdb-ripple-color="dark">Post Job</button>
+                        </div>
+
+
+                        </div>
+                    </div>
+                    
+                   
+
+                  </form>
+                </div>   
+    {% endblock %}
+  </body>
+</html>

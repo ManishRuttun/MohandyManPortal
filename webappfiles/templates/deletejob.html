@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Job</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/logo.png')}}">
+
+  </head>
+  <body background="{{ url_for('static', filename='img/bg2.jpg') }}" class="d-flex flex-column min-vh-100" >
+    {% extends "baseowner.html" %} {% block content %} 
+    <h3>{{msg}}</h3>
+    <div class="container">
+        <form action="/deleterecord" method="post" class="mt-5">
+      <h3>Remove Job from Job Lists</h3>
+      <div class="row col-md-5 mb-5">
+        <label for="txtref" class="form-label">Job Reference</label>
+        <input type="text" class="form-control" name="txtref" id="txtref" />
+      </div>
+      <input
+        type="submit"
+        class="col-3 btn btn-primary"
+        onclick="return
+        confirm('Are you sure you want delete this Job?')"
+        value="Delete Job"
+      />
+    </form>
+    </div>
+    {% endblock %}
+  </body>
+</html>

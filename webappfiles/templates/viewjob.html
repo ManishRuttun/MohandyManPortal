@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Jobs Lists</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/logo.png')}}">
+
+  </head>
+  <body  background="{{ url_for('static', filename='img/bg2.jpg') }}" class="d-flex flex-column min-vh-100" >
+    {% extends "baseowner.html" %} {% block content %}
+    <div class="container mt-5">
+      <h3 class="text-center mt-4" style="font-family: 'Permanent Marker', cursive; font-size: 50px; color:blueviolet;">Jobs Lists</h3>
+      </div>
+
+  <div class="container row">
+  <table border="5" class="table table-primary table-hover" style="margin-left: 10%;">
+    <thead>
+      <th>Title</th>
+      <th>Job Reference</th>
+      <th>Description</th>
+      <th>Salary</th>
+      <th>Close date</th>
+    </thead>
+    {% for row in rows %}
+    <tr>
+      <td>{{row.1}}</td>
+      <td>{{row.2}}</td>
+      <td>{{row.3}}</td>
+      <td>{{row.5}}</td>
+      <td>{{row.4}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}
+  </body>
+</html>

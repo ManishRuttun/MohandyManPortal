@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Job</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/logo.png')}}">
+
+  </head>
+  <body background="{{ url_for('static', filename='img/bg2.jpg') }}" class="d-flex flex-column min-vh-100" >
+    {% extends "baseowner.html" %} {% block content %} 
+    <h3>{{msg}}</h3>
+    <div class="container">
+    <form action="/updaterecord" method="post" class="mt-3">
+      <h3>Update Job</h3>
+      <div class="row col-md-5 mb-3">
+        <label for="txtref" class="form-label">Job Reference</label>
+        <input type="text" class="form-control" name="txtref" id="txtref" />
+      </div>
+      <div class="row col-md-5 mb-3">
+        <label for="txtdes" class="form-label">Description</label>
+        <input type="text" class="form-control" name="txtdes" id="txtdes" />
+      </div>
+      <div class="row col-md-5 mb-3">
+        <label for="txtsal" class="form-label">Salary</label>
+        <input type="text" class="form-control" name="txtsal" id="txtsal" />
+      </div>
+      <div class="row col-md-5 mb-3">
+        <label for="txtdate" class="form-label">Closing Date</label>
+        <input type="date" class="form-control" name="txtdate" id="txtdate" />
+      </div>
+
+      <input
+        type="submit"
+        class="col-3 btn btn-primary"
+        value="Update Record"
+      />
+    </form>
+    </div>
+    {% endblock %}
+  </body>
+</html>

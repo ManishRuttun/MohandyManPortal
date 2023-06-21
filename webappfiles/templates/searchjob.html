@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search Job</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/logo.png')}}">
+
+  </head>
+
+  <body background="{{ url_for('static', filename='img/bg2.jpg') }}" class="d-flex flex-column min-vh-100" >
+    {% extends "baseowner.html" %}
+  {% block content %}{{msg}}
+    <div>
+    <form action="/searchjob/" method="get" class="mt-5">
+      <div class="container">
+        <h3>Search housekeeper by skill</h3>
+        
+        <div class="row col-md-4 mb-4">
+            <label for="txtskill" class="form-label">Enter Skill</label>
+            <input type="text" class="form-control" name="txtskill" id="txtskill" />
+        </div>
+     
+        <input type="submit" class="col-3 btn btn-primary mb-3" value="Search" />
+      </div>
+    </form>
+    </div>
+
+    <div class=" container ">
+    {% if rows %}
+    <table border="5" class="table table-primary table-hover">
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Skill</th>
+            <th>Postal Address</th>
+            <th>Contact Number</th>
+        </thead>
+        {% for row in rows %}
+        <tr>
+            <td>{{row.3}}</td>
+            <td>{{row.2}}</td>
+            <td>{{row.4}}</td>
+            <td>{{row.11}}</td>
+            <td>{{row.6}}</td>
+            <td>{{row.7}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% elif request.args.get("txtskill") is none %}
+    <p></p>
+    {% else %}
+    <p>No {{request.args.get("txtskill")}} job found!</p>
+    {% endif %} {% endblock %}
+  </div>
+</body>
+</html>
